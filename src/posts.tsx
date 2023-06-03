@@ -1,16 +1,16 @@
-import { List, Datagrid, TextField, ReferenceField, EditButton, Edit, SimpleForm, ReferenceInput, TextInput } from "react-admin";
+import {List,Datagrid,TextField,ReferenceField,EditButton,Edit,SimpleForm,ReferenceInput,TextInput,} from "react-admin";
 import { useRecordContext } from "react-admin";
 import { Create } from "react-admin";
 
 
 
 export const PostList = () => (
-  <List filters={postFilters}>
-   <Datagrid>
-     <TextField source="id" />
+  <List>
+    <Datagrid>
+      <TextField source="id" />
       <ReferenceField source="userId" reference="users" />
       <TextField source="title" />
-     <EditButton />
+      <EditButton />
     </Datagrid>
   </List>
 );
@@ -18,13 +18,14 @@ export const PostList = () => (
 
 
 
-export const PostEdit = () =>(
-    <Edit title ={<PostTitle/>}>
+
+export const PostEdit = () => (
+  <Edit>
     <SimpleForm>
-     <TextInput source="id" disabled />
+      <TextInput source="id" disabled />
       <ReferenceInput source="userId" reference="users" />
       <TextInput source="title" />
-     <TextInput source="body" multiline rows={5} />
+      <TextInput source="body" multiline rows={5} />
     </SimpleForm>
   </Edit>
 );
